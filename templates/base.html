@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>{% block title %}{{ SITE_NAME }}{% endblock %}</title>
+
+
+    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/clean-blog.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
+    <link href="/static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Fira Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext"
+          rel='stylesheet' type='text/css'>
+
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="https://cdn.bootcss.com/highlight.js/9.15.8/styles/github.min.css" rel="stylesheet">
+
+    <style>
+        .codehilite {
+            padding: 0;
+        }
+
+        /* for block of numbers */
+        .hljs-ln-numbers {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+
+            text-align: center;
+            color: #ccc;
+            border-right: 1px solid #CCC;
+            vertical-align: top;
+            padding-right: 5px;
+        }
+
+        .hljs-ln-n {
+            width: 30px;
+        }
+
+        /* for block of code */
+        .hljs-ln .hljs-ln-code {
+            padding-left: 10px;
+            white-space: pre;
+        }
+    </style>
+
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="{% url 'index' %}">{{ SITE_NAME }}</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{% url 'index' %}">首页</a>
+                </li>
+                <li>
+                    <a href="{% url 'tag:tag_index' %}">标签</a>
+                </li>
+                <li>
+                    <a href="{% url 'about' %}#wx">公众号</a>
+                </li>
+                <li>
+                    <a href="{% url 'about' %}">关于</a>
+                </li>
+                {% if user.is_anonymous %}
+                    <li><a href="{% url 'author:login' %}">登陆</a></li>
+                    <li><a href="{% url 'author:register' %}">注册</a></li>
+                {% else %}
+                    <li><a href="{% url 'article:add' %}">添加文章</a></li>
+                    <li><a href="{% url 'author:logout' %}">注销</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+{% block page_header %}
+    <header class="intro-header"
+            style="background-image: url('{% block background-image %}{{ SITE_HOME_BACKGROUND }}{% endblock %}')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading" id="{% block header_id %}site-heading{% endblock %}">
+                        <h2>{% block header_title %}{{ SITE_AUTHOR }}{% endblock %}</h2>
+                        <hr class="small">
+                        <span class="subheading">{% block header_subtitle %}{{ SITE_DESCRIPTION }}{% endblock %}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+{% block toc %}
+{% endblock %}
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="{{ SITE_ZHIHU_URL }}">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa  fa-stack-1x fa-inverse">知</i>
+                                </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ SITE_GITHUB_URL }}">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                        </a>
+                    </li>
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; {{ SITE_AUTHOR }} Powered by <a href="https://github.com/w2n1ck/dcblog">DCblog</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+{% block script %}
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/js/clean-blog.min.js"></script>
+    <script src="https://cdn.bootcss.com/highlight.js/9.15.8/highlight.min.js"></script>
+    <script src="https://cdn.bootcss.com/highlightjs-line-numbers.js/2.7.0/highlightjs-line-numbers.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+        hljs.initLineNumbersOnLoad();
+    </script>
+{% endblock %}
+</body>
+</html>

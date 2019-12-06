@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block header_id %}tag-heading{% endblock %}
+{% block header_title %}瓦都尅{% endblock %}
+{% block header_subtitle %} 生活不止眼前的苟且, 还有诗和远方. {% endblock %}
+{% block background-image %}{{ SITE_ABOUT_BACKGROUND }}{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <!--<div id="tag_cloud" class="tags">-->
+                    <!--<a href="#wx1" style="background-color: rgb(0, 133, 161);">公众号</a>-->
+                <!--</div>-->
+                <div class="one-tag-list">
+                    <span class="post-title" id="whoami">
+                            <h2>关于</h2>
+                    </span>
+
+                    <div class="post-preview">
+                        <a href="#whoami">
+                            <h3 class="post-subtitle">
+                                <p class="text-white bg-success">root@userInfo:~# whoami</p>
+                            </h3>
+                            <h4><p>瓦都尅</p></h4>
+                            <h3 class="post-subtitle">
+                                <p class="text-white bg-success">root@userInfo:~# id</p>
+                            </h3>
+                            <h4><p>uid=0(安全工程师) gid=0(一个人的安全部) groups=0(某甲方金融公司)</p></h4>
+                        </a>
+                    </div>
+
+                </div>
+                <hr>
+                <div class="one-tag-list">
+                    <span class="post-title" id="contact">
+                            <h2>联系</h2>
+                    </span>
+                    <div class="post-preview">
+                        <a href="#contact">
+                            <h3 class="post-subtitle">
+                                <p class="text-white bg-success">root@userInfo:~# cat find_me</p>
+                            </h3>
+                            <h4><p>mail: admin@w2n1ck.com</p></h4>
+                            <h4><p>weibo: 瓦都尅</p></h4>
+                        </a>
+                    </div>
+
+                </div>
+                <hr>
+                <div class="one-tag-list">
+                    <span class="post-title" id="wx">
+                            <h2>公众号</h2>
+                    </span>
+                    <div class="post-preview">
+                        <a href="#wx">
+                            <h3 class="post-subtitle">
+                                <p class="text-white bg-success">root@userInfo:~# fim -a 安全泰式柑汁.jpg</p>
+                            </h3>
+                            <img src="/static/img/wxgzh.jpg">
+                        </a>
+                    </div>
+
+                </div>
+                <hr>
+                <div class="one-tag-list">
+                    <span class="post-title" id="friends">
+                            <h2>友情链接</h2>
+                    </span>
+                    <div class="post-preview">
+                        <a href="#friends">
+                            <h3 class="post-subtitle">
+                                <p class="text-white bg-success">root@userInfo:~# ls my_friends</p>
+                            </h3>
+                            <h4><a class="text-white " href="http://wkh.dropsec.xyz">王小洪: http://wkh.dropsec.xyz</a>
+                            </h4>
+                            <h4><a class="text-white " href="http://fgp.dropsec.xyz">冯小鹏: http://fgp.dropsec.xyz</a>
+                            </h4>
+                            <h4><a class="text-white " href="http://blog.neargle.com/">周小斌: http://blog.neargle.com</a>
+                            </h4>
+                            <h4><a class="text-white " href="http://am4zing.me/">王小岩: http://am4zing.me</a></h4>
+                            <h4><a class="text-white " href="http://yangge.me/">杨大成: http://yangge.me</a></h4>
+                            <h4><a class="text-white " href="http://www.dropsec.xyz/">Drops: http://www.dropsec.xyz</a>
+                            </h4>
+
+                        </a>
+                    </div>
+
+                </div>
+                <hr>
+            </div>
+{% endblock %}
