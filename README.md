@@ -1,7 +1,7 @@
 # DCblog
 #### 1. 介绍
 
-博客系统使用python3编写，基于[Django 2.2]()和[clean-blog](https://startbootstrap.com/themes/clean-blog/)前端框架编写。
+博客系统使用python编写，基于[Django]()和[clean-blog](https://startbootstrap.com/themes/clean-blog/)前端框架编写。
 
 我理解的博客系统只需专注于写作和阅读即可，不应该有太多胡里花哨的功能。
 
