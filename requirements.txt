@@ -1,5 +1,5 @@
 Django==2.2.7
 Markdown==3.1.1
-mistune==0.8.4
+mistune==2.0.3
 pytz==2019.3
 sqlparse==0.3.0
